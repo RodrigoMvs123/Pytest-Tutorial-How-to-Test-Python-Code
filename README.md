@@ -4,6 +4,8 @@ https://www.youtube.com/watch?v=cHYq1MRoyI0
 
 https://raw.githubusercontent.com/RodrigoMvs123/Pytest-Tutorial-How-to-Test-Python-Code/main/README.md
 
+https://github.com/RodrigoMvs123/Pytest-Tutorial-How-to-Test-Python-Code/blame/main/README.md
+
 ## What is Pytest ?
 Testing framework for Python
 Auto-discovery of tests
