@@ -1,4 +1,5 @@
-# Pytest-Tutorial-How-to-Test-Python-Code
+
+## Pytest-Tutorial-How-to-Test-Python-Code
 
 https://www.youtube.com/watch?v=cHYq1MRoyI0 
 
@@ -7,16 +8,22 @@ https://raw.githubusercontent.com/RodrigoMvs123/Pytest-Tutorial-How-to-Test-Pyth
 https://github.com/RodrigoMvs123/Pytest-Tutorial-How-to-Test-Python-Code/blame/main/README.md
 
 ## What is Pytest ?
+```
 Testing framework for Python
 Auto-discovery of tests
 Rich assertion introspection 
 Support parameterized and fixture-based testing
+```
 
-## Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 python3 -m venv .venv
 pip install pytest
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -32,7 +39,9 @@ def add(number_one, number_two):
 
 def divide(number_one, number_two):
     return number_one / number_two
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -48,11 +57,16 @@ import source.my_functions as my_functions
 
 def test_add():
     pass
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest tests/test_my_functions.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -69,12 +83,16 @@ import source.my_functions as my_functions
 def test_add():
     result = my_functions.add(number_one:1, number_two:4)
     assert result == 5 
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest tests/test_my_functions.py
+```
 
-Visual Studio Code
+## Source Code
+```pythonVisual Studio Code
 EXPLORER
 OPEN EDITORS
 source
@@ -94,11 +112,16 @@ def test_add():
 def test_divide():
     result = my_functions.divide(number_one:10, number_two:5)
     assert result == 2
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest tests/test_my_functions.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -123,11 +146,16 @@ def test_divide():
 def test_divide_by_zero():
     with pytest.raises(ZeroDivisionError):
         my_functions.divide(number_one:10, number_two:0)
-   
-Visual Studio Code
-Terminal
-pytest tests/test_my_functions.py
+```
 
+### Visual Studio Code
+Terminal
+```bash
+pytest tests/test_my_functions.py
+```
+
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -145,7 +173,9 @@ def divide(number_one, number_two):
     if number_two == 0:
         raise ValueError
     return number_one / number_two
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -170,11 +200,16 @@ def test_divide():
 def test_divide_by_zero():
     with pytest.raises(ValueError):
         my_functions.divide(number_one:10, number_two:0)
-   
-Visual Studio Code
-Terminal
-pytest tests/test_my_functions.py
+```
 
+### Visual Studio Code
+Terminal
+```bash
+pytest tests/test_my_functions.py
+```
+
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -203,14 +238,18 @@ def test_divide():
 def test_divide_by_zero():
     with pytest.raises(ValueError):
         my_functions.divide(number_one:10, number_two:0)
-   
-Visual Studio Code
+```
+
+### Visual Studio Code
 Terminal
+```bash
 pytest tests/test_my_functions.py
+```
 
 Class Based Tests
 
-
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -240,6 +279,9 @@ class Circle(Shape):
     
     def perimeter(self):
         return 2 * math.pi * self.radius
+```
+
+```python
 
 Visual Studio Code
 EXPLORER
@@ -260,12 +302,17 @@ class TestCicle():
 
     def test_one(self):
         assert True
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest tests/test_circle.py 
 cd tests/
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -291,12 +338,18 @@ class TestCircle():
 
     def test_one(self):
         assert True
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest test_circle.py 
 pytest -s
+```
 
+## Source Code
+Terminal
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -322,11 +375,17 @@ class TestCircle():
 
     def test_two(self):
         assert True
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash 
 pytest -s
+```
 
+## Source Code
+Terminal
+```bash
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -357,13 +416,17 @@ class TestCircle():
 
     def test_two(self):
         assert True
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash 
 pytest test_circle.py
 pytest test_circle.py -s
+```
 
-
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -397,13 +460,18 @@ class TestCircle():
         result = self.circle.perimeter()
         expected = 2 * math.pi * self.circle.radius
         assert result == expected 
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash 
 pytest test_circle.py -s
+```
 
 Fixtures 
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -446,7 +514,9 @@ class Rectangle(Shape):
     
     def perimeter(self):
         return (self.length * 2) + (self.width * 2)
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -466,11 +536,17 @@ import source.shapes as shapes
 def test_area():
     rectangle = shapes.Rectangle(length:10, width:20)
     assert rectangle.area() == 10 * 20
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash 
 pytest test_rectangle.py
+```
 
+## Source Code
+Terminal
+```bash
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -494,11 +570,16 @@ def test_area():
 def test_perimeter():
     rectangle = shapes.Rectangle(length:10, width:20)
     assert rectangle.perimeter() == (10 * 2) + (20 * 2)
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash 
 pytest test_rectangle.py
+```
 
+## Source Code
+```python 
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -524,11 +605,16 @@ def test_area(my_rectangle):
 
 def test_perimeter(my_rectangle):
     assert my_rectangle.perimeter() == (10 * 2) + (20 * 2)
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash 
 pytest test_rectangle.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -578,7 +664,9 @@ class Rectangle(Shape):
     
     def perimeter(self):
         return (self.length * 2) + (self.width * 2)
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -611,11 +699,16 @@ def test_perimeter(my_rectangle):
 
 def test_not_equal(my_rectangle, weird_rectangle):
     assert my_rectangle != weird_rectangle
+```
 
-Visual Studio Code
-Terminal 
+### Visual Studio Code
+Terminal
+```bash 
 pytest test_rectangle.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -640,7 +733,9 @@ def my_rectangle():
 @paytest.fixture
 def weird_rectangle():
     return shapes.Rectangle(length:5, width:6)
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -665,11 +760,16 @@ def test_perimeter(my_rectangle):
 
 def test_not_equal(my_rectangle, weird_rectangle):
     assert my_rectangle != weird_rectangle
+```
 
-Visual Studio Code
-Terminal 
+### Visual Studio Code
+Terminal
+```bash 
 pytest test_rectangle.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -707,13 +807,18 @@ class TestCircle():
 
     def test_not_same_area_rectangle(self, my_rectangle):
         assert self.circle.area() != my_rectangle.area() 
+```
 
-Visual Studio Code
-Terminal 
+### Visual Studio Code
+Terminal
+```bash 
 pytest test_circle.py
+```
 
 Parametrize and Mark 
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -751,11 +856,16 @@ def test_very_slow():
     time.sleep(5)
     result = my_functions.divide(number_one:10, number_two:5)
      assert result == 2
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest test_my_functions.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -794,11 +904,15 @@ def test_very_slow():
     time.sleep(5)
     result = my_functions.divide(number_one:10, number_two:5)
      assert result == 2
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest -m slow
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -841,11 +955,16 @@ def test_very_slow():
 @pytest.mark.skip(reason="This feature is currently broken")
 def test_add():
     assert my_functions.add(number_one:1, number_two:2) == 3
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest test_my_functions.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -892,11 +1011,16 @@ def test_add():
 @pytest.mark.xfail(reason="We know we can not divide by zero")
 def test_divide_zero_broken():
     my_functions.divide(number_one:4, number_two:0)
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest test_my_functions.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -951,7 +1075,9 @@ class Square(Rectangle):
 
     def __init__(self, side_length):
         super().__init__(side_length, side_length):
-        
+```
+
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -972,11 +1098,16 @@ import source.shapes as shapes
 @pytest.mark.paramatrize("side_length, expected_area" [(5, 25), (4, 16), (9, 81)])
 def test_multiple_square_areas(side_length, expected_area):
     assert shape.Square(side_length).area() == expected_area
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest test_square.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -1001,13 +1132,18 @@ def test_multiple_square_areas(side_length, expected_area):
 @pytest.mark.parametrize("side_length, expected_perimeter", [(3, 12), (4, 16), (5, 20)])
 def test_multiple_perimeters(side_length, expected_perimeter):
     assert shapes.Square(side_length).perimeter() == expected_perimeter
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest test_square.py
+```
 
 Mocking
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -1031,7 +1167,9 @@ database = {
 
 def get_user_from_db(user_id):
     return database.get(user_id)
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -1058,7 +1196,9 @@ def test_get_user_from_db(mock_get_user_from_db):
     user_name = service.get_user_from_db(1)
     
     assert user_name == "Mocked Alice"
+```
 
+```python
 Visual Studio Code
 Terminal
 pytest test_service.py
@@ -1098,10 +1238,13 @@ def get_users():
         return response.json()
     
     raise requests.HTTPError
+```
 
 https://jsonplaceholder.typicode.com/ 
+
 https://jsonplaceholder.typicode.com/users 
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -1137,11 +1280,16 @@ def test_get_users(mock_get):
     mock_get.return_value = mock_response
     data = service.get_users()
     assert data == {"id": 1, "name": "John Doe"}
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest tests/test_service.py
+```
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -1185,9 +1333,12 @@ def test_get_users_errors(mock_get):
     mock_get.return_value = mock_response
     with pytest.raises(requests.HTTPError):
         service.get_users()
+```
 
 ChatGPT and Testing 
 
+## Source Code
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -1279,7 +1430,9 @@ class Teacher(Person):
 
 class Student(Person):
     pass
+```
 
+```python
 Visual Studio Code
 EXPLORER
 OPEN EDITORS
@@ -1356,11 +1509,11 @@ def test_person_init():
     name = "Severus Snape"
     person = Person(name)
     assert person.name == name
+```
 
-Visual Studio Code
+### Visual Studio Code
 Terminal
+```bash
 pytest tests/test_school.py
-
-
-
+```
 
